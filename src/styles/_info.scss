@@ -1,0 +1,19 @@
+@import "variables";
+
+.information-container {
+  display: flex;
+  padding: 15px;
+  grid-column: 1/3;
+  background-color: #B8C2CC;
+  border-radius: 100px;
+  width: $board-width*2+$grid-gap;
+
+  @media (max-width: $breakpoint) {
+    width: $board-width;
+  }
+}
+
+.information-message {
+  margin: auto;
+  font-size: large;
+}

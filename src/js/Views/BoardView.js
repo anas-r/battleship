@@ -1,9 +1,11 @@
 import {$, $_, BOARD_SIZE, COMPUTER_PLAYERNAME} from "../_utils";
 
 export class BoardView {
-    constructor(boardSize = BOARD_SIZE,playerNameHandler) {
+    constructor(boardSize = BOARD_SIZE, playerNameHandler) {
         this.nodelist = [];
         this.playerName = playerNameHandler();
+        this.playerNameDom = $_('h3');
+        this.playerNameDom.textContent = `${this.playerName}: board`;
         this.dom = $_('div', 'board')
         for (let i = 0; i < boardSize; i++) {
             const nodesLine = [];
@@ -17,7 +19,7 @@ export class BoardView {
     }
 
     mount(rootElement) {
-        rootElement.append(this.dom);
+        rootElement.append(this.playerNameDom, this.dom);
     }
 
     bindInitialSetUpColors = (handler) => {

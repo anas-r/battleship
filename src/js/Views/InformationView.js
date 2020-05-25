@@ -3,20 +3,23 @@ import {$, $_} from "../_utils";
 export class InformationView {
     constructor() {
         this.mounted = false;
-        this.consoler = $_('div','information');
+        this.container = $_('div','information-container');
+        this.message = $_('div','information-message');
+        this.message.textContent = "welcome to battleship. enjoy"
+        this.container.append(this.message);
     }
 
     mount = () => {
         if (this.mounted) {
             return false
         } else {
-            document.body.append(this.consoler)
+            $('#root').append(this.container)
             this.mounted = true;
             return true;
         }
     }
 
     setMessage = (message) => {
-        this.consoler.textContent = message;
+        this.message.textContent = message;
     }
 }

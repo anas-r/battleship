@@ -1,8 +1,13 @@
 @import 'variables';
 
-#root {
-  display: flex;
-  justify-content: space-around;
+.board-human {
+  align-self: end;
+  justify-self: end;
+}
+
+.board-computer {
+  align-self: start;
+  justify-self: start;
 }
 
 .board {
@@ -10,23 +15,28 @@
   width: $board-width;
   height: $board-width;
   grid-template-columns: repeat($board-size, 1fr);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: $shadow;
 
   .board-case {
-    border: solid black 1px;
+    border: solid rgba(0,0,0,0.15) 1px;
     cursor: pointer;
+
+    @include board;
   }
 
   .initial {
-    background-color: green;
+    background-color: $initial;
   }
 
   .hit {
-    background-color: red;
+    background-color: $hit;
     cursor: default;
   }
 
   .miss {
-    background-color: blue;
+    background-color: $miss;
     cursor: default;
   }
 }

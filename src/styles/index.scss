@@ -1,12 +1,22 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url(../fonts/Roboto-Regular.ttf)
-}
-
 @import 'variables';
 @import '_board.scss';
+@import '_info.scss';
 
-html {
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap');
+
+body {
   font-size: $root-font-size;
-  font-family: $font-family;
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: $bg;
+}
+
+#root {
+  margin: 32px 100px;
+  padding: 50px;
+  display: grid;
+  grid-gap: $grid-gap;
+  justify-items: center;
+  align-items: center;
+
+  @include sm;
 }

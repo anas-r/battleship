@@ -51,10 +51,10 @@ export class GameManager {
             this.onComputerMarkCase(i, j, action.hitType);
 
             if (isWinner) {
-                this.onSetMessage(`Game over! ${whoAffected} lost!`)
+                this.onSetMessage(`game over: ${whoAffected} lost`)
                 return true;
             } else if (action.shipSunk) {
-                this.onSetMessage(`${action.shipType} of ${whoAffected} has sunk!`)
+                this.onSetMessage(`cpu: ${action.shipType} has sunk`)
             } else {
                 this.onResetMessage()
             }
@@ -65,12 +65,11 @@ export class GameManager {
             this.onHumanMarkCase(I, J, action.hitType);
 
             if (isWinner) {
-                this.onSetMessage(`Game over! ${whoAffected} lost!`)
+                this.onSetMessage(`game over: ${whoAffected} lost`)
                 return true;
             } else if (action.shipSunk) {
-                this.onSetMessage(`${action.shipType} of ${whoAffected} has sunk!`)
+                this.onSetMessage(`player: ${action.shipType} has sunk`)
             } else {
-                this.onResetMessage()
             }
             return false;
         }

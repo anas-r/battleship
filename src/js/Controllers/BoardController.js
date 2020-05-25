@@ -1,7 +1,7 @@
 import {$, HUMAN_PLAYERNAME} from "../_utils";
 
 export class BoardController {
-    constructor(view, gameManager,mountDOM = $('#root'),infoView) {
+    constructor(view, gameManager,mountDOM,infoView) {
         this.view = view;
         this.gameManager = gameManager;
         this.playerName = this.view.playerName;
