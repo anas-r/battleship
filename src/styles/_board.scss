@@ -1,0 +1,32 @@
+@import 'variables';
+
+#root {
+  display: flex;
+  justify-content: space-around;
+}
+
+.board {
+  display: grid;
+  width: $board-width;
+  height: $board-width;
+  grid-template-columns: repeat($board-size, 1fr);
+
+  .board-case {
+    border: solid black 1px;
+    cursor: pointer;
+  }
+
+  .initial {
+    background-color: green;
+  }
+
+  .hit {
+    background-color: red;
+    cursor: default;
+  }
+
+  .miss {
+    background-color: blue;
+    cursor: default;
+  }
+}

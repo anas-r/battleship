@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto-Regular.ttf)
+}
+
+@import 'variables';
+@import '_board.scss';
+
+html {
+  font-size: $root-font-size;
+  font-family: $font-family;
+}
